@@ -23,7 +23,10 @@ export function Home() {
         Alert.alert('Remover', `Deseja remover ${name} da lista?`, [
             {
                 text: 'Sim',
-                onPress: () => Alert.alert('Deletado!'),
+                onPress: () =>
+                    setParticipants((prevState) =>
+                        prevState.filter((participant) => participant !== name)
+                    ),
             },
             {
                 text: 'Não',
